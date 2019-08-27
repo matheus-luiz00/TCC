@@ -12,8 +12,8 @@ namespace LocacaoGaragens.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Nome { get; set; }
-        [Required]
+        public string Descricao { get; set; }
+
         public int Codigo { get; set; }
     }
 }

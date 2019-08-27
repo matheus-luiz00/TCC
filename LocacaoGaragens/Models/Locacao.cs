@@ -21,9 +21,13 @@ namespace LocacaoGaragens.Models
 
         [ForeignKey("PeriodoLocacao")]
         public int Periodo { get; set; }
+        [ForeignKey("UsuarioDb")]
         public int Usuario { get; set; }
+        public string Status { get; set; }
         public bool TermoAceito { get; set; }
 
         public PeriodoLocacao PeriodoLocacao { get; set; }
+
+        public Usuario UsuarioDb { get; set; }
     }
 }

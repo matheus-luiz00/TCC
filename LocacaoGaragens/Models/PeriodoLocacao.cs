@@ -8,9 +8,10 @@ namespace LocacaoGaragens.Models
 {
     public class PeriodoLocacao
     {
-        [Required]
         [Key]
         public int Id { get; set; }
+
+        public virtual TipoVeiculo TipoVeiculo { get; set; }
 
         public DateTime DataInicial { get; set; }
 

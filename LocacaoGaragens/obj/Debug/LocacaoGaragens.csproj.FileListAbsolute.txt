@@ -83,12 +83,7 @@ C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramewo
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramework.SqlServer.dll
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramework.xml
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramework.SqlServer.xml
-C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.PrimeiroBanco.resources
-C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csproj.GenerateResource.cache
-C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.Tabela.resources
-C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.TesteFK.resources
-C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.FkMoto.resources
-C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.CodigoId.resources
-C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csprojAssemblyReference.cache
-C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.TodasAsTabelas.resources
-C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.DesignDeTabelaCompleto.resources
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csprojAssemblyReference.cache
+C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.Inicial.resources
+C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csproj.GenerateResource.cache
+C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.MudancaFkMarca.resources

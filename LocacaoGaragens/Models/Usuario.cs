@@ -13,7 +13,10 @@ namespace LocacaoGaragens.Models
         public int IdRegistration { get; set; }
         public string Email { get; set; }
         public bool Pcd { get; set; }
-        public bool TrabalhoNot { get; set; }
+        public bool Noturno { get; set; }
+        public bool ForaBnu { get; set; }
+        public bool Carona { get; set; }
+        public DateTime Nascimento { get; set; }
 
     }
 }
