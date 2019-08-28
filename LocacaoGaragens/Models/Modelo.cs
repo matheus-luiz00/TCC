@@ -16,7 +16,9 @@ namespace LocacaoGaragens.Models
 
         [Required]
         public string Descricao { get; set; }
+
         [JsonIgnore]
+        [Required]
         public virtual Marca MarcaTable { get; set; }
 
 

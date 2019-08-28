@@ -71,6 +71,27 @@ namespace LocacaoGaragens.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        // PUT: api/Usuarios/5
+        [ResponseType(typeof(void))]
+        public async Task<IHttpActionResult> PutResidenciaCarona(int id, bool carona, bool foraBnu)
+        {
+
+            var usu = db.usuarios.Find(id);
+            if (usu == null)
+                return NotFound();
+
+            usu.Carona = carona;
+            usu.ForaBnu = foraBnu;
+
+            await db.SaveChangesAsync();
+
+            return StatusCode(HttpStatusCode.NoContent);
+
+            
+
+            
+        }
+
         // POST: api/Usuarios
         [ResponseType(typeof(Usuario))]
         public async Task<IHttpActionResult> PostUsuario(Usuario usuario)

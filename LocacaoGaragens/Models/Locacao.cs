@@ -17,6 +17,7 @@ namespace LocacaoGaragens.Models
         public int Marca { get; set; }
         public int Modelo { get; set; }
         public int Cor { get; set; }
+        //[CustomValidFields(Enums.ValidFields.ValidarPlaca)]
         public string Placa { get; set; }
 
         [ForeignKey("PeriodoLocacao")]
@@ -26,8 +27,8 @@ namespace LocacaoGaragens.Models
         public string Status { get; set; }
         public bool TermoAceito { get; set; }
 
-        public PeriodoLocacao PeriodoLocacao { get; set; }
+        public virtual PeriodoLocacao PeriodoLocacao { get; set; }
 
-        public Usuario UsuarioDb { get; set; }
+        public virtual Usuario UsuarioDb { get; set; } 
     }
 }

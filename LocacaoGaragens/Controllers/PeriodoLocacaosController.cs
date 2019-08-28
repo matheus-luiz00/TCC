@@ -23,6 +23,14 @@ namespace LocacaoGaragens.Controllers
             return db.periodoLocacoes;
         }
 
+        [Route("Api/PeriodoLocacaos/{codigoTipo}/disponivel")]
+        [HttpGet]
+        public IQueryable<PeriodoLocacao> GetPeriodoDisponivel(int codigoTipo)
+        {
+            return db.periodoLocacoes.Where(x => x.DataFinal >= DateTime.Now).Where(x => x.TipoVeiculo.Codigo == codigoTipo);
+            
+        }
+
         // GET: api/PeriodoLocacaos/5
         [ResponseType(typeof(PeriodoLocacao))]
         public async Task<IHttpActionResult> GetPeriodoLocacao(int id)
@@ -75,6 +83,12 @@ namespace LocacaoGaragens.Controllers
         [ResponseType(typeof(PeriodoLocacao))]
         public async Task<IHttpActionResult> PostPeriodoLocacao(PeriodoLocacao periodoLocacao)
         {
+            if (periodoLocacao.DataInicial > periodoLocacao.DataFinal)
+                return BadRequest();
+
+            var tpVeiculo = db.TipoVeiculos.Find(periodoLocacao.TipoVeiculo.Id);
+            periodoLocacao.TipoVeiculo = tpVeiculo;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

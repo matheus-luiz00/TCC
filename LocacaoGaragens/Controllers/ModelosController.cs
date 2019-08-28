@@ -36,6 +36,8 @@ namespace LocacaoGaragens.Controllers
             return Ok(modelo);
         }
 
+        [Route("Api/Modelos/{codigo}/marca")]
+        [HttpGet]
         public IQueryable<Modelo> GetModelos(int codigo)
         {
             return db.Modelos.Where(x => x.MarcaTable.Codigo == codigo) ;
@@ -80,6 +82,9 @@ namespace LocacaoGaragens.Controllers
         [ResponseType(typeof(Modelo))]
         public async Task<IHttpActionResult> PostModelo(Modelo modelo)
         {
+            var marca = db.Marcas.Find(modelo.MarcaTable.Id);
+            modelo.MarcaTable = marca;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

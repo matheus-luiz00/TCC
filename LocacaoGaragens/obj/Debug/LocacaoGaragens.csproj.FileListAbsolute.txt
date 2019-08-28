@@ -87,3 +87,7 @@ C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\Locacao
 C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.Inicial.resources
 C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csproj.GenerateResource.cache
 C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.MudancaFkMarca.resources
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.tjaosidj.resources
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.DescricaoCodigoNotRequiredMarca.resources
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.AtualizacaoPost.resources
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.CampoNotRequired.resources

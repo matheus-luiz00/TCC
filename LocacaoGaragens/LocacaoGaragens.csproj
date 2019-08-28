@@ -183,6 +183,22 @@
     <Compile Include="Migrations\201908271841176_MudancaFkMarca.Designer.cs">
       <DependentUpon>201908271841176_MudancaFkMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908281210228_tjaosidj.cs" />
+    <Compile Include="Migrations\201908281210228_tjaosidj.Designer.cs">
+      <DependentUpon>201908281210228_tjaosidj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908281333434_DescricaoCodigoNotRequiredMarca.cs" />
+    <Compile Include="Migrations\201908281333434_DescricaoCodigoNotRequiredMarca.Designer.cs">
+      <DependentUpon>201908281333434_DescricaoCodigoNotRequiredMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908281415157_AtualizacaoPost.cs" />
+    <Compile Include="Migrations\201908281415157_AtualizacaoPost.Designer.cs">
+      <DependentUpon>201908281415157_AtualizacaoPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908281443449_CampoNotRequired.cs" />
+    <Compile Include="Migrations\201908281443449_CampoNotRequired.Designer.cs">
+      <DependentUpon>201908281443449_CampoNotRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextDB.cs" />
     <Compile Include="Models\Cor.cs" />
@@ -285,6 +301,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908271841176_MudancaFkMarca.resx">
       <DependentUpon>201908271841176_MudancaFkMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908281210228_tjaosidj.resx">
+      <DependentUpon>201908281210228_tjaosidj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908281333434_DescricaoCodigoNotRequiredMarca.resx">
+      <DependentUpon>201908281333434_DescricaoCodigoNotRequiredMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908281415157_AtualizacaoPost.resx">
+      <DependentUpon>201908281415157_AtualizacaoPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908281443449_CampoNotRequired.resx">
+      <DependentUpon>201908281443449_CampoNotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,6 +7,8 @@ namespace LocacaoGaragens.Enums
 {
     public enum ValidFields
     {
-        ValidarCodigo
+        ValidarEmail,
+        ValidarPlaca,
+        ValidarPeriodo
     }
 }

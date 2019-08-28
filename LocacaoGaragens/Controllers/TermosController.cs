@@ -23,6 +23,13 @@ namespace LocacaoGaragens.Controllers
             return db.termos;
         }
 
+        [Route("Api/Termos/vigente")]
+        [HttpGet]
+        public Termo GetTermoVigente()
+        {
+            return db.termos.OrderByDescending(x => x.DataPublicacao).First();
+        }
+
         // GET: api/Termos/5
         [ResponseType(typeof(Termo))]
         public async Task<IHttpActionResult> GetTermo(int id)
@@ -83,6 +90,9 @@ namespace LocacaoGaragens.Controllers
             
 
             db.termos.Add(termo);
+            await db.SaveChangesAsync();
+
+            await db.locacoes.Where(x => x.PeriodoLocacao.DataFinal > DateTime.Now).ForEachAsync(x => x.TermoAceito = false);
             await db.SaveChangesAsync();
 
 

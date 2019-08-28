@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocacaoGaragens.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace LocacaoGaragens.Models
         [Key]
         public int Id { get; set; }
         public int IdRegistration { get; set; }
+
+        [CustomValidFields(ValidFields.ValidarEmail)]
         public string Email { get; set; }
         public bool Pcd { get; set; }
         public bool Noturno { get; set; }

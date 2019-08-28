@@ -83,6 +83,9 @@ namespace LocacaoGaragens.Controllers
         [ResponseType(typeof(Marca))]
         public async Task<IHttpActionResult> PostMarca(Marca marca)
         {
+            var tpVeiculo = db.TipoVeiculos.Find(marca.TipoVeiculo.Id);
+            marca.TipoVeiculo = tpVeiculo;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

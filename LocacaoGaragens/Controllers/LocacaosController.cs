@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -75,6 +76,51 @@ namespace LocacaoGaragens.Controllers
         [ResponseType(typeof(Locacao))]
         public async Task<IHttpActionResult> PostLocacao(Locacao locacao)
         {
+            if (!locacao.TermoAceito)
+                return BadRequest("Para realizar a locação, os termos de uso devem ser aceitos");
+
+            //Caso seja carro ou moto
+            if(locacao.TipoVeiculo > 1)
+            {
+                //Caso tenha placa / Modelo / Marca
+                if (locacao.Placa != null && locacao.Modelo > 0 && locacao.Marca > 0)
+                {
+                    locacao.Placa.Trim('-');
+                    bool placaMSul = Regex.IsMatch(locacao.Placa, @"^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
+
+                    bool placaBrasil = Regex.IsMatch(locacao.Placa, @"^[a-zA-Z]{3}[0-9]{4}$");
+
+                    bool placaMoto = Regex.IsMatch(locacao.Placa, @"^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$");
+
+                    //Caso seja uma placa valida
+                    if (placaMSul || placaBrasil || placaMoto)
+                    {
+                        //caso a placa seja nao cadastrada no banco
+                        var existe = db.locacoes.First(x => x.Placa == locacao.Placa);
+                        if (existe == null)
+                        {
+                            var prdLocacao = db.periodoLocacoes.FirstOrDefault(x => x.Id == locacao.Periodo);
+
+                            if (prdLocacao != null)
+                            {
+                                locacao.PeriodoLocacao = prdLocacao;
+
+
+                            }
+                            return BadRequest("Periodo de locação inexistente");
+                        }
+
+                        return BadRequest("A placa já está cadastrada no sistema");
+                        
+                    }
+                    return BadRequest("A placa informada não está no formato aceitado");
+                }
+                return BadRequest("Modelo, placa e marca são necessários para realizar a locação");
+            } else
+            {
+
+            }
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

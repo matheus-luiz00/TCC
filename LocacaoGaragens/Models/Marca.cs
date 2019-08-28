@@ -14,9 +14,9 @@ namespace LocacaoGaragens.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        
         public string Descricao { get; set; }
-        [Required]
+        
         public int Codigo { get; set; }
         [JsonIgnore]
         public virtual TipoVeiculo TipoVeiculo { get; set; }
