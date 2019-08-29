@@ -16,5 +16,7 @@ namespace LocacaoGaragens.Models
 
         [Required]
         public DateTime DataPublicacao { get; set; }
+
+        public bool Ativo { get; set; } = true;
     }
 }

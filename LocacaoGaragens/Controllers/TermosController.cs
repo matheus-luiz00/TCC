@@ -108,8 +108,7 @@ namespace LocacaoGaragens.Controllers
             {
                 return NotFound();
             }
-
-            db.termos.Remove(termo);
+            termo.Ativo = false;
             await db.SaveChangesAsync();
 
             return Ok(termo);

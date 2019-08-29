@@ -83,7 +83,6 @@ C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramewo
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramework.SqlServer.dll
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramework.xml
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\bin\EntityFramework.SqlServer.xml
-C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csprojAssemblyReference.cache
 C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.Inicial.resources
 C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csproj.GenerateResource.cache
 C:\Users\Hbsis\Source\Repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.MudancaFkMarca.resources
@@ -91,3 +90,6 @@ C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\Locacao
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.DescricaoCodigoNotRequiredMarca.resources
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.AtualizacaoPost.resources
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.CampoNotRequired.resources
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.TipoVeiculoLocacaoNotRequired.resources
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csprojAssemblyReference.cache
+C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.TabelaValor.resources

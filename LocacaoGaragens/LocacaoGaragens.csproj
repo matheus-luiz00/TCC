@@ -170,6 +170,7 @@
     <Compile Include="Controllers\TermosController.cs" />
     <Compile Include="Controllers\TipoVeiculosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\ValorLocacoesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Enums\ValidFields.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,6 +200,14 @@
     <Compile Include="Migrations\201908281443449_CampoNotRequired.Designer.cs">
       <DependentUpon>201908281443449_CampoNotRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908291401363_TipoVeiculo-Locacao-NotRequired.cs" />
+    <Compile Include="Migrations\201908291401363_TipoVeiculo-Locacao-NotRequired.Designer.cs">
+      <DependentUpon>201908291401363_TipoVeiculo-Locacao-NotRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908291953310_TabelaValor.cs" />
+    <Compile Include="Migrations\201908291953310_TabelaValor.Designer.cs">
+      <DependentUpon>201908291953310_TabelaValor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextDB.cs" />
     <Compile Include="Models\Cor.cs" />
@@ -210,7 +219,9 @@
     <Compile Include="Models\Termo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\TipoVeiculo.cs" />
+    <Compile Include="Models\ValorLocacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Validacoes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -313,6 +324,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908281443449_CampoNotRequired.resx">
       <DependentUpon>201908281443449_CampoNotRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908291401363_TipoVeiculo-Locacao-NotRequired.resx">
+      <DependentUpon>201908291401363_TipoVeiculo-Locacao-NotRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908291953310_TabelaValor.resx">
+      <DependentUpon>201908291953310_TabelaValor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

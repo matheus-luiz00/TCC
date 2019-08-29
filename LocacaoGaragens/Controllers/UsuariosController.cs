@@ -72,16 +72,23 @@ namespace LocacaoGaragens.Controllers
         }
 
         // PUT: api/Usuarios/5
+        [Route("Api/Usuarios/{id}/{carona}/{forabnu}/")]
+        [HttpPut]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutResidenciaCarona(int id, bool carona, bool foraBnu)
         {
 
-            var usu = db.usuarios.Find(id);
+            Usuario usu = await db.usuarios.FindAsync(id);
             if (usu == null)
                 return NotFound();
 
             usu.Carona = carona;
             usu.ForaBnu = foraBnu;
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
             await db.SaveChangesAsync();
 
@@ -117,7 +124,7 @@ namespace LocacaoGaragens.Controllers
                 return NotFound();
             }
 
-            db.usuarios.Remove(usuario);
+            usuario.Ativo = false;
             await db.SaveChangesAsync();
 
             return Ok(usuario);

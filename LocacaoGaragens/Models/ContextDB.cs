@@ -17,5 +17,7 @@ namespace LocacaoGaragens.Models
         public DbSet<Locacao> locacoes { get; set; }
         public DbSet<Termo> termos { get; set; }
         public DbSet<Usuario> usuarios { get; set; }
+
+        public DbSet<ValorLocacao> ValorLocacoes { get; set; }
     }
 }

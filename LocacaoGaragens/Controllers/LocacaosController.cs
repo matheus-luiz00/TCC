@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using LocacaoGaragens.Models;
+using LocacaoGaragens.Utils;
 
 namespace LocacaoGaragens.Controllers
 {
@@ -41,6 +42,46 @@ namespace LocacaoGaragens.Controllers
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutLocacao(int id, Locacao locacao)
         {
+            
+            var validador = new Validacoes();
+
+            if (!(validador.TipoVeiculoExists(locacao.TipoVeiculo, db)))
+                return BadRequest("Tipo de veículo informado inexistente");
+
+
+            //Caso seja carro ou moto
+            if (locacao.TipoVeiculo <= 1)
+            {
+
+                //Valida placa
+                if (!(validador.ValidarPlacaUnique(locacao.Placa, db)))
+                    return BadRequest("A placa já cadastrada ou em formato invalido");
+
+                if (!(validador.CodigoMarcaExists(locacao.Marca, db)))
+                    return BadRequest("Marca informada inexistente");
+
+                if (!(validador.ModeloExists(locacao.Modelo, db)))
+                    return BadRequest("Modelo informado inexistente");
+
+                if (!(validador.CorExists(locacao.Cor, db)))
+                    return BadRequest("Cor informada inexistente");
+            }
+
+            locacao.Status = "Fila de Espera";
+
+            //Valida se periodo de locação existe
+            if (!(validador.PeriodoLocacaoExists(locacao.Periodo, db)))
+                //return BadRequest("Periodo de locação inexistente");
+                return BadRequest();
+
+            if (!(validador.UsuarioExists(locacao.Usuario, db)))
+                return BadRequest("Usuario Invalido");
+
+            
+
+            locacao.PeriodoLocacao = db.periodoLocacoes.Find(locacao.Periodo);
+            locacao.UsuarioDb = db.usuarios.Find(locacao.Usuario);
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -79,47 +120,46 @@ namespace LocacaoGaragens.Controllers
             if (!locacao.TermoAceito)
                 return BadRequest("Para realizar a locação, os termos de uso devem ser aceitos");
 
+            var validador = new Validacoes();
+
+            if(!(validador.TipoVeiculoExists(locacao.TipoVeiculo, db)))
+                return BadRequest("Tipo de veículo informado inexistente");
+
+
             //Caso seja carro ou moto
-            if(locacao.TipoVeiculo > 1)
-            {
-                //Caso tenha placa / Modelo / Marca
-                if (locacao.Placa != null && locacao.Modelo > 0 && locacao.Marca > 0)
-                {
-                    locacao.Placa.Trim('-');
-                    bool placaMSul = Regex.IsMatch(locacao.Placa, @"^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$");
-
-                    bool placaBrasil = Regex.IsMatch(locacao.Placa, @"^[a-zA-Z]{3}[0-9]{4}$");
-
-                    bool placaMoto = Regex.IsMatch(locacao.Placa, @"^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$");
-
-                    //Caso seja uma placa valida
-                    if (placaMSul || placaBrasil || placaMoto)
-                    {
-                        //caso a placa seja nao cadastrada no banco
-                        var existe = db.locacoes.First(x => x.Placa == locacao.Placa);
-                        if (existe == null)
-                        {
-                            var prdLocacao = db.periodoLocacoes.FirstOrDefault(x => x.Id == locacao.Periodo);
-
-                            if (prdLocacao != null)
-                            {
-                                locacao.PeriodoLocacao = prdLocacao;
-
-
-                            }
-                            return BadRequest("Periodo de locação inexistente");
-                        }
-
-                        return BadRequest("A placa já está cadastrada no sistema");
-                        
-                    }
-                    return BadRequest("A placa informada não está no formato aceitado");
-                }
-                return BadRequest("Modelo, placa e marca são necessários para realizar a locação");
-            } else
+            if (locacao.TipoVeiculo <= 1)
             {
 
+                //Valida placa
+                if(!(validador.ValidarPlacaUnique(locacao.Placa, db)))
+                    return BadRequest("A placa já cadastrada ou em formato invalido");
+
+                if (!(validador.CodigoMarcaExists(locacao.Marca, db)))
+                    return BadRequest("Marca informada inexistente");
+
+                if (!(validador.ModeloExists(locacao.Modelo, db)))
+                    return BadRequest("Modelo informado inexistente");
+
+                if(!(validador.CorExists(locacao.Cor, db)))
+                    return BadRequest("Cor informada inexistente");
             }
+
+            locacao.Status = "Fila de Espera";
+
+            //Valida se periodo de locação existe
+            if (!(validador.PeriodoLocacaoExists(locacao.Periodo, db)))
+                //return BadRequest("Periodo de locação inexistente");
+                return BadRequest(ModelState);
+
+            if (!(validador.UsuarioExists(locacao.Usuario, db)))
+                return BadRequest("Usuario Invalido");
+
+            if (!(validador.ValidarUsuarioLocou(locacao, db)))
+                return BadRequest();
+
+            locacao.PeriodoLocacao = db.periodoLocacoes.Find(locacao.Periodo);
+            locacao.UsuarioDb = db.usuarios.Find(locacao.Usuario);
+
 
             if (!ModelState.IsValid)
             {

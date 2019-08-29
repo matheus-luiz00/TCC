@@ -19,7 +19,9 @@ namespace LocacaoGaragens.Models
         public bool Noturno { get; set; }
         public bool ForaBnu { get; set; }
         public bool Carona { get; set; }
-        public DateTime Nascimento { get; set; }
+        public DateTime? Nascimento { get; set; }
+
+        public bool Ativo { get; set; } = true;
 
     }
 }

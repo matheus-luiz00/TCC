@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +12,7 @@ namespace LocacaoGaragens.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        
         public int TipoVeiculo { get; set; }
 
         public int Marca { get; set; }
@@ -27,8 +28,9 @@ namespace LocacaoGaragens.Models
         public string Status { get; set; }
         public bool TermoAceito { get; set; }
 
+        [JsonIgnore]
         public virtual PeriodoLocacao PeriodoLocacao { get; set; }
-
+        [JsonIgnore]
         public virtual Usuario UsuarioDb { get; set; } 
     }
 }
