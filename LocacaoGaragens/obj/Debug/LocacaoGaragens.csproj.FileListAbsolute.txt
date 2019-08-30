@@ -91,5 +91,4 @@ C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\Locacao
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.AtualizacaoPost.resources
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.CampoNotRequired.resources
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.TipoVeiculoLocacaoNotRequired.resources
-C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.csprojAssemblyReference.cache
 C:\Users\Hbsis\source\repos\matheus-luiz00\TCC\LocacaoGaragens\obj\Debug\LocacaoGaragens.Migrations.TabelaValor.resources

@@ -5,11 +5,10 @@ using System.Web;
 
 namespace LocacaoGaragens.Enums
 {
-    public enum ValidFields
+    public enum Status
     {
-        ValidarEmail,
-        ValidarPlaca,
-        ValidarPeriodo,
-        ValidarNumero
+        FilaEspera,
+        Analise,
+        Aprovado
     }
 }

@@ -18,14 +18,14 @@ namespace LocacaoGaragens.Models
         public int Marca { get; set; }
         public int Modelo { get; set; }
         public int Cor { get; set; }
-        //[CustomValidFields(Enums.ValidFields.ValidarPlaca)]
+        
         public string Placa { get; set; }
 
         [ForeignKey("PeriodoLocacao")]
         public int Periodo { get; set; }
         [ForeignKey("UsuarioDb")]
         public int Usuario { get; set; }
-        public string Status { get; set; }
+        public Enums.Status Status { get; set; }
         public bool TermoAceito { get; set; }
 
         [JsonIgnore]

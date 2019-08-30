@@ -13,6 +13,8 @@ namespace LocacaoGaragens.Models
         public int Id { get; set; }
         public int IdRegistration { get; set; }
 
+        public string  Nome { get; set; }
+
         [CustomValidFields(ValidFields.ValidarEmail)]
         public string Email { get; set; }
         public bool Pcd { get; set; }

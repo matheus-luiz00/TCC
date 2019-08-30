@@ -5,11 +5,10 @@ using System.Web;
 
 namespace LocacaoGaragens.Enums
 {
-    public enum ValidFields
+    public enum TipoVeiculo
     {
-        ValidarEmail,
-        ValidarPlaca,
-        ValidarPeriodo,
-        ValidarNumero
+        Automovel,
+        Motocicleta,
+        Patinete_Bicicleta
     }
 }

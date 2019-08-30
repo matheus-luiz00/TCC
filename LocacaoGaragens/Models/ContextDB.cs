@@ -19,5 +19,7 @@ namespace LocacaoGaragens.Models
         public DbSet<Usuario> usuarios { get; set; }
 
         public DbSet<ValorLocacao> ValorLocacoes { get; set; }
+
+        public System.Data.Entity.DbSet<LocacaoGaragens.Models.Vaga> Vagas { get; set; }
     }
 }
